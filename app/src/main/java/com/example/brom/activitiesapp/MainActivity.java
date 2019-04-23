@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Ger listData värdet av arrayen mountainNames
         listData=new ArrayList<>(Arrays.asList(mountainNames));
+
         mountainData.add(new Mountain(mountainNames[0],mountainLocations[0],mountainHeights[0]));
+
         mountainAdapter=new ArrayAdapter<Mountain>(this,R.layout.list_item_textview,R.id.list_item_textview, mountainData);
 
 

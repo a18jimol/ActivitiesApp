@@ -5,10 +5,7 @@ public class Mountain {
     private String location;
     private int height;
 
-    @Override
-    public String toString() {
-        return name;
-    }
+
 
     public Mountain(){
         name="Saknar namn";
@@ -36,5 +33,8 @@ public class Mountain {
         return name;
     }
 
-
+    @Override
+    public String toString() {
+        return name;
+    }
 }
