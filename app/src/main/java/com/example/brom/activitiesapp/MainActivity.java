@@ -41,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // skaper en variabel som hämtar data från arrayerna efter värdet på i
-                String temp = ""    + mountainNames[i] + " "
+                /*String temp = ""    + mountainNames[i] + " "
                         + mountainLocations[i] + " "
-                        + mountainHeights[i];
+                        + mountainHeights[i];*/
+                String temp = mountainData.get(i).info();
                 Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_SHORT).show();
             }
         });
