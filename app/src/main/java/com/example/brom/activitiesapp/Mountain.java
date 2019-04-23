@@ -1,17 +1,22 @@
 package com.example.brom.activitiesapp;
 
-public class MountainDetailsActivity{
+public class Mountain {
     private String name;
     private String location;
     private int height;
 
-    public MountainDetailsActivity(){
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    public Mountain(){
         name="Saknar namn";
         location="Saknar plats";
         height=-1;
     }
 
-    public MountainDetailsActivity(String n, String l, int h){
+    public Mountain(String n, String l, int h){
         name=n;
         location=l;
         height=h;
@@ -30,4 +35,6 @@ public class MountainDetailsActivity{
     public String getName(){
         return name;
     }
+
+
 }
