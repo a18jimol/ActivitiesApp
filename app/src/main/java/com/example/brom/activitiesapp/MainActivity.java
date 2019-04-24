@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
     private String[] mountainLocations = {"Alps","Alps","Alaska"};
     private int[] mountainHeights ={4478,4808,6190};
+    private String[] extraMessage;
+    public static final String EXTRA_MESSAGE = "hejhej";
     // Create ArrayLists from the raw data above and use these lists when populating your ListView.
     private ArrayList<String> listData;
     private ArrayAdapter<String> adapter;
@@ -40,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         ListView my_listview=(ListView) findViewById(R.id.my_listview);
         my_listview.setAdapter(mountainAdapter);
 
+
+
         my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -48,9 +52,15 @@ public class MainActivity extends AppCompatActivity {
                         + mountainLocations[i] + " "
                         + mountainHeights[i];*/
                 String temp = mountainData.get(i).info();
-                Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), MountainDetailsActivity.class);
+                String allt = mountainData.get(i).info();
+                intent.putExtra(EXTRA_MESSAGE,allt );
                 startActivity(intent);
+
+
+
+
             }
         });
 
